@@ -30,15 +30,19 @@ input TicketInput {
     title: String!
     description: String!
     createdByUserId: ID!
+    tags: [TagInput!]
 }
 
 type Tag {
     id: ID!
-    description: string
+    name: String!
+    description: String
 }
 
 input TagInput {
-    description: string
+    id: ID
+    name: String
+    description: String
 }
 
 type User {
@@ -51,4 +55,3 @@ input UserInput {
     username: String
     name: String
 }
-

@@ -16,6 +16,18 @@ exports.up = knex => {
       table.foreign('createdByUserId').references('id').inTable('user')
       table.foreign('assignedToUserId').references('id').inTable('user')
     })
+    .createTable('tag', table => {
+      table.increments('id').primary()
+      table.string('name').unique()
+      table.string('description')
+    })
+    .createTable('ticketTag', table => {
+      table.integer('ticketId')
+      table.integer('tagId')
+
+      table.foreign('ticketId').references('id').inTable('ticket')
+      table.foreign('tagId').references('id').inTable('user')
+    })
 }
 
 exports.down = knex => {
