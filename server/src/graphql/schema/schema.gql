@@ -20,7 +20,7 @@ type Ticket {
     title: String
     description: String
     createdAt: DateTime!
-    modifiedAt: DateTime!
+    modifiedAt: DateTime
     createdBy: User!
     assignedTo: User
     tags: [Tag!]!

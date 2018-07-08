@@ -10,6 +10,8 @@ exports.up = knex => {
       table.increments('id').primary()
       table.string('title')
       table.string('description')
+      table.date('createdAt')
+      table.date('modifiedAt')
       table.integer('createdByUserId')
       table.integer('assignedToUserId')
 
